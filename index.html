@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>esempio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8" />
+  </head>
+  <body onload="loadTxt()">
+    <p class="testi_1">esempio</p>
+    <p class="testi_2">esempio</p>
+    <div class="testi_3">zeta</div>
+
+    <script type="text/javascript">
+
+    function loadTxt() {
+      fetch('css/test.txt')
+      .then(response => response.text())
+      .then((data) => {
+        //console.log(data)
+        
+        const rule_img  = /<img>.*?<img>/g
+        const img = data.match(rule_img);
+        const rule_aud  = /<aud>.*?<aud>/g
+        const aud = data.match(rule_aud);
+
+        var audlink = aud.toString().replace(/<aud>/g, "");
+        const audio = document.createElement("audio");
+        audio.controls = true;
+        audio.className = "audioplayer";
+        const source = document.createElement("source");
+        source.src = audlink;
+        source.type = "audio/mpeg"
+
+        var imglink = img.toString().replace(/<img>/g, "");
+        const photo = document.createElement("img");
+        photo.src = imglink;
+        photo.style.width = 400+"px";
+
+        document.getElementsByClassName("testi_1")[0].innerHTML = data;
+        document.getElementsByClassName("testi_2")[0].innerHTML = audlink;
+        document.getElementsByClassName("testi_2")[0].append(audio);
+        document.getElementsByClassName("audioplayer")[0].append(source);
+        document.getElementsByClassName("testi_3")[0].append(photo);
+      });
+    }
+
+    /*function findMeta(){
+      const doc = fetch('css/test.txt').then(response => response.text());
+      console.log(doc)
+    };*/
+
+    /*(async() => {
+
+        const doc = await fetch('css/test.txt').then(r => r.json());;
+
+        const allText = doc;
+        console.log(allText);
+
+        //const img = allText.match(rule_dazzle);
+        //const rule_img  = /<date>.*?<date>/g;
+
+        document.getElementsByClassName("testi_2")[0].innerHTML = "ciao"
+        //document.getElementsByClassName("testi_3")[0].innerHTML = css/main.css
+    });*/
+    </script>
+  </body>
+</html>

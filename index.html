@@ -6,9 +6,13 @@
     <meta charset="utf-8" />
   </head>
   <body onload="loadTxt()">
-    <p class="testi_1">esempio</p>
-    <p class="testi_2">esempio</p>
-    <div class="testi_3">zeta</div>
+    <div class="testi_1" alt="tutto il testo del file .txt">file di testo:<br></div>
+    <p>risultato:</p>
+    <div class="testi_2"></div>
+    <div class="testi_3"></div>
+    <div class="testi_4"></div>
+    <div class="testi_5"></div>
+    <div class="testi_6"></div>
 
     <script type="text/javascript">
 
@@ -16,11 +20,18 @@
       fetch('css/test.txt')
       .then(response => response.text())
       .then((data) => {
-        //console.log(data)
-        
+
+        //rules
+        const rule_title  = /<tit>.*?<tit>/g
+        const rule_descript  = /<desc>.*?<desc>/g
         const rule_img  = /<img>.*?<img>/g
-        const img = data.match(rule_img);
         const rule_aud  = /<aud>.*?<aud>/g
+        const rule_imgdesc  = /<imgdesc>.*?<imgdesc>/g
+
+        const title = data.match(rule_title).toString().replace(/<tit>/g, "");
+        const descript = data.match(rule_descript).toString().replace(/<desc>/g, "");
+        const imgdesc = data.match(rule_imgdesc).toString().replace(/<imgdesc>/g, "");
+        const img = data.match(rule_img);
         const aud = data.match(rule_aud);
 
         var audlink = aud.toString().replace(/<aud>/g, "");
@@ -36,32 +47,15 @@
         photo.src = imglink;
         photo.style.width = 400+"px";
 
-        document.getElementsByClassName("testi_1")[0].innerHTML = data;
-        document.getElementsByClassName("testi_2")[0].innerHTML = audlink;
-        document.getElementsByClassName("testi_2")[0].append(audio);
+        document.getElementsByClassName("testi_1")[0].append(data);
+        document.getElementsByClassName("testi_2")[0].append(title);
+        document.getElementsByClassName("testi_3")[0].innerHTML = descript;
+        document.getElementsByClassName("testi_4")[0].append(audio);
         document.getElementsByClassName("audioplayer")[0].append(source);
-        document.getElementsByClassName("testi_3")[0].append(photo);
+        document.getElementsByClassName("testi_5")[0].append(photo);
+        document.getElementsByClassName("testi_6")[0].innerHTML = imgdesc;
       });
     }
-
-    /*function findMeta(){
-      const doc = fetch('css/test.txt').then(response => response.text());
-      console.log(doc)
-    };*/
-
-    /*(async() => {
-
-        const doc = await fetch('css/test.txt').then(r => r.json());;
-
-        const allText = doc;
-        console.log(allText);
-
-        //const img = allText.match(rule_dazzle);
-        //const rule_img  = /<date>.*?<date>/g;
-
-        document.getElementsByClassName("testi_2")[0].innerHTML = "ciao"
-        //document.getElementsByClassName("testi_3")[0].innerHTML = css/main.css
-    });*/
     </script>
   </body>
 </html>

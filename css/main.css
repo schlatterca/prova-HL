@@ -1,7 +1,16 @@
-.testi_1 {
-  color: blue;
+body{
+	width: 100vw;
 }
 
-.testi_2 {
-  color: black;
+.testi_2{
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.testi_3{
+	font-size: 16px;
+}
+
+.testi_6{
+	font-size: 10px;
 }

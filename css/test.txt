@@ -1,5 +1,9 @@
-questo è un testo di prova
+<tit>TITOLO ARTICOLO<tit>
 
-<img>https://dl.dropboxusercontent.com/s/cnnaq69z24a6fqe/zeta.png?dl=0<img>
+<desc>Questo è un articolo di prova. Tutto il testo dell'articolo e i media vengono richiamati attraverso l'uso di un file .txt visibile a <a target="_blank" href="https://www.ansa.it">questo link</a> e realizzato con una serie di tag.<desc>
+
+<img>https://dl.dropboxusercontent.com/s/itpaqb02vnd1prj/fig.8.JPG?dl=0<img>
 
 <aud>https://dl.dropbox.com/s/hmhfq0d3vtvbu1t/002AG_Podcast_Licalbe%20Steiner.mp3<aud>
+
+<imgdesc>Questa è la descrizione dell'immagine.<imgdesc>

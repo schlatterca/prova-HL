@@ -1,6 +1,6 @@
 <tit>TITOLO ARTICOLO<tit>
 
-<desc>Questo è un articolo di prova. Tutto il testo dell'articolo e i media vengono richiamati attraverso l'uso di un file .txt visibile a <a target="_blank" href="https://www.ansa.it">questo link</a> e realizzato con una serie di tag.<desc>
+<desc>Questo è un articolo di prova. Tutto il testo dell'articolo e i media vengono richiamati attraverso l'uso di un file .txt visibile a <a target="_blank" href="https://github.com/schlatterca/prova-HL/blob/3559a3e968fb8c75dfeb29b2313c466b9ee8b830/css/test.txt">questo link</a> e realizzato con una serie di tag.<desc>
 
 <img>https://dl.dropboxusercontent.com/s/itpaqb02vnd1prj/fig.8.JPG?dl=0<img>
 
